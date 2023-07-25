@@ -24,9 +24,10 @@ export const PeopleCard = ({
   known_for_department: string;
   known_for: [];
 }) => {
-  const knownfor = known_for.filter((k) => {
+  let knownfor = [];
+  known_for.forEach((k) => {
     if (k.name && k.name!==undefined && k.name!=="") {
-      return k.name;
+      knownfor.push(k.name);
     }
   })
   console.log("knownfor", knownfor);
