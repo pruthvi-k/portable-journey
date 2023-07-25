@@ -1,30 +1,24 @@
-import { GenresData, movieGenres } from "@/clients/tmdb";
 import {
-  Box,
   Card,
   CardContent,
   CardHeader,
   Chip,
-  CircularProgress,
-  CircularProgressProps,
-  Divider,
   Stack,
   Typography,
 } from "@mui/material";
 
 export const PeopleCard = ({
   name = "",
-  overview = "",
   known_for_department = "",
   known_for = [],
 }: {
   id: number;
   name?: string;
   overview: string;
-  known_for_department: string;
-  known_for: [];
+  known_for_department: string | undefined;
+  known_for: [] | undefined;
 }) => {
-  let knownfor = [];
+  let knownfor: string[] = [];
   known_for.forEach((k) => {
     if (k.name && k.name!==undefined && k.name!=="") {
       knownfor.push(k.name);

@@ -69,7 +69,6 @@ export const SearchResultItem = async ({
     case "person":
       return <PeopleCard 
       name={name}
-      overview= {overview}
       known_for_department={known_for_department}
       known_for={known_for}
       />
