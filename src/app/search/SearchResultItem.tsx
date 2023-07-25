@@ -2,12 +2,10 @@ import { GenresData, movieGenres } from "@/clients/tmdb";
 import {
   Box,
   Card,
-  CardActions,
   CardContent,
   CardHeader,
   Chip,
   CircularProgress,
-  CircularProgressClasses,
   CircularProgressProps,
   Divider,
   Stack,
