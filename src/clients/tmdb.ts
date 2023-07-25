@@ -76,7 +76,7 @@ interface Genre {
   name: string;
 }
 
-interface GenresData {
+export interface GenresData {
   genres: Array<Genre>;
 }
 
