@@ -13,6 +13,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { PeopleCard } from "./PeopleCard";
 
 export const SearchResultItem = async ({
   title = "",
@@ -23,6 +24,8 @@ export const SearchResultItem = async ({
   first_air_date,
   vote_average,
   genre_ids,
+  known_for_department,
+  known_for
 }: {
   backdrop_path: string;
   id: number;
@@ -40,6 +43,8 @@ export const SearchResultItem = async ({
   first_air_date?: string;
   vote_average: number;
   vote_count: number;
+  known_for_department?:string;
+  known_for?:[];
 }) => {
   let mediaTypeColor:CircularProgressProps["color"];
   let mediaTitle;
@@ -61,6 +66,13 @@ export const SearchResultItem = async ({
       MediaChip = <Chip label="Tv" variant="outlined" color={mediaTypeColor} />;
       mediaGenres = await movieGenres();
       break;
+    case "person":
+      return <PeopleCard 
+      name={name}
+      overview= {overview}
+      known_for_department={known_for_department}
+      known_for={known_for}
+      />
     default:
 
       return <Typography>Search result is not a movie</Typography>;
