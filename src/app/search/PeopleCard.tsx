@@ -24,7 +24,6 @@ export const PeopleCard = ({
       knownfor.push(k.name);
     }
   })
-  console.log("knownfor", knownfor);
   return (
     <Card variant="outlined" sx={{ borderRadius: 2 }}>
       <CardHeader
